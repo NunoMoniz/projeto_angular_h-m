@@ -1,0 +1,23 @@
+.topMenu {
+    list-style-type: none;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+/* .topMenu a {
+    text-decoration: none;
+    color: inherit;
+    padding: 10px 20px;
+    display: inline-block;
+} */
+
+img {
+    width: 60px;
+}

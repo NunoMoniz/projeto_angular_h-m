@@ -1,0 +1,43 @@
+<nav>
+    <ul class="topMenu">
+        <li><button mat-menu-item [matMenuTriggerFor]="menu">Homem</button></li>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Casacos</button>
+            <button mat-menu-item>Camisas</button>
+            <button mat-menu-item>Calças</button>
+            <button mat-menu-item>Sweatshirts</button>
+            <button mat-menu-item>Polos</button>
+            <button mat-menu-item>Sapatos</button>
+            <a routerLink="products" routerLinkActive="activa"><button mat-menu-item>Todos</button></a>
+        </mat-menu> |
+        <li><button mat-menu-item [matMenuTriggerFor]="menu">Mulher</button></li>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Casacos</button>
+            <button mat-menu-item>Camisas</button>
+            <button mat-menu-item>Calças</button>
+            <button mat-menu-item>Sweatshirts</button>
+            <button mat-menu-item>Polos</button>
+            <button mat-menu-item>Sapatos</button>
+        </mat-menu>
+        <li><a routerLink="/" routerLinkActive="activa" [routerLinkActiveOptions]="{ exact: true }"><img
+                    src="assets/images/logo.png" alt="logotipo"></a></li>
+        <li><button mat-menu-item [matMenuTriggerFor]="menu">Criança</button></li> |
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Casacos</button>
+            <button mat-menu-item>Camisas</button>
+            <button mat-menu-item>Calças</button>
+            <button mat-menu-item>Sweatshirts</button>
+            <button mat-menu-item>Polos</button>
+            <button mat-menu-item>Sapatos</button>
+        </mat-menu>
+        <li><button mat-menu-item [matMenuTriggerFor]="menu">Acessórios</button></li>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Casacos</button>
+            <button mat-menu-item>Camisas</button>
+            <button mat-menu-item>Calças</button>
+            <button mat-menu-item>Sweatshirts</button>
+            <button mat-menu-item>Polos</button>
+            <button mat-menu-item>Sapatos</button>
+        </mat-menu>
+    </ul>
+</nav>
