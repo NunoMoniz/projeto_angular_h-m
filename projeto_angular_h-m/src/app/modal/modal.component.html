@@ -4,7 +4,6 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title">Controlo de acessos</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-email">
                     <label for="email">Email</label>
@@ -26,7 +25,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Retroceder</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closingModal()">Retroceder</button>
                     <button class="btn btn-primary" type="submit" [disabled]="formLogin.invalid">Validar</button>
                 </div>
             </div>

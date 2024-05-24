@@ -1,9 +1,15 @@
-<!-- Wishlist -->
-<i class="fa-regular fa-clipboard"></i>
-<!-- Profile -->
-<i class="fa-regular fa-user"></i>
-<!-- Login -->
-<a routerLink="modal" routerLinkActive="activa"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+<div *ngIf="loggedIn === false">
+    <!-- Registo -->
+    <i class="fa-solid fa-user-plus"></i>
+    <!-- Login -->
+    <a routerLink="modal" routerLinkActive="activa"><i class="fa-solid fa-right-to-bracket"></i></a>
+</div>
 
-<app-modal *ngIf="showModal" (closeModal)="handleModalClose()"></app-modal>
-
+<div *ngIf="loggedIn === true">
+    <!-- Wishlist -->
+    <i class="fa-regular fa-clipboard"></i>
+    <!-- Profile -->
+    <i class="fa-regular fa-user"></i>
+    <!-- Logout -->
+    <i class="fa-solid fa-right-from-bracket"></i>
+</div>

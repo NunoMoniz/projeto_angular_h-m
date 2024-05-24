@@ -1,25 +1,16 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
-import { ModalComponent } from '../modal/modal.component';
+import { Component } from '@angular/core';
+import { RouterLink, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-menuicons',
   standalone: true,
-  imports: [RouterLink, ModalComponent],
+  imports: [RouterModule, RouterLink, CommonModule],
   templateUrl: './menuicons.component.html',
   styleUrl: './menuicons.component.css'
 })
 export class MenuiconsComponent {
-  showModal: boolean = false;
 
-  constructor(private router: Router) {}
+  loggedIn: boolean = false;
 
-  openModal() {
-    this.showModal = true;
-  }
-
-  handleModalClose() {
-    this.showModal = false;
-    this.router.navigate(['/']);
-}
 }

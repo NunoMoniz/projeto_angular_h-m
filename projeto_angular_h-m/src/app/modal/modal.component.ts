@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { User } from '../shared/user.type';
-import { users } from '../shared/users';
-
-
+import { ServmodalService } from './servmodal.service';
+import { Router } from '@angular/router';
+import { MenuiconsComponent } from '../menuicons/menuicons.component';
 
 @Component({
   selector: 'app-modal',
@@ -14,10 +14,11 @@ import { users } from '../shared/users';
   styleUrl: './modal.component.css'
 })
 export class ModalComponent {
-  @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
+  @Input() usersList: User[] = [];
 
   formLogin!: FormGroup;
-  constructor() {}
+
+  constructor(private router: Router, private servmodal: ServmodalService) {}
 
   ngOnInit() {
     this.formLogin = new FormGroup({
@@ -29,18 +30,19 @@ export class ModalComponent {
   onSubmit() {
     if (this.formLogin.valid) {
       const { email, password } = this.formLogin.value;
-      const isValid = this.checkLogin(email, password);
+      const isValid = this.servmodal.checkLogin(email, password);
       if (isValid) {
-        this.closeModal.emit();
+        this.closingModal();
       } else {
         alert('Utilizador inexistente');
       }
     }
   }
 
-  checkLogin(email: string, password: string): boolean {
-    return users.some(user => user.email === email && user.password === password);
+  closingModal() {
+    this.router.navigate(['']);
   }
-
 }
+
+
 
