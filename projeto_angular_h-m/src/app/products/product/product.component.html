@@ -1,13 +1,11 @@
 <p *ngIf="productsList.length === 0">Não há artigos para serem mostradas</p>
 <div class="products" *ngIf="productsList.length > 0">
     <div class="product" *ngFor="let product of productsList">
-        <p>{{ product.name }}</p>
-        <p>{{ product.brand }}</p>
-        <p>{{ product.product_type }}</p>
-        <p>{{ product.colour }}</p>
-        <p>{{ product.price }}</p>
-        <p>{{ product.description }}</p>
-        <img src="{{ product.main_photo }}">
-        <img src="{{ product.secundary_photo }}">
+        <img class="mainphoto" src="{{ product.main_photo }}">
+        <img class="secondaryphoto" src="{{ product.secondary_photo }}">
+        <h2 class="brand">{{ product.brand }}</h2>
+        <p class="name">{{ product.name }}</p>
+        <p class="type">{{ product.product_type }}</p>
+        <h1 class="price">{{ product.price }} €</h1>
     </div>
 </div>

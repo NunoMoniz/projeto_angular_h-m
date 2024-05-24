@@ -1,1 +1,9 @@
-<p>menuicons works!</p>
+<!-- Wishlist -->
+<i class="fa-regular fa-clipboard"></i>
+<!-- Profile -->
+<i class="fa-regular fa-user"></i>
+<!-- Login -->
+<a routerLink="modal" routerLinkActive="activa"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+
+<app-modal *ngIf="showModal" (closeModal)="handleModalClose()"></app-modal>
+

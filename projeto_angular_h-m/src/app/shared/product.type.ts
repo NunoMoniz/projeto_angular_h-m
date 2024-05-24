@@ -1,5 +1,5 @@
 export type Product = {
-    id: number,
+    id?: number,
     name: string,
     brand: string,
     product_type: string,
@@ -7,6 +7,6 @@ export type Product = {
     price: number,
     description: string,
     main_photo: string,
-    secundary_photo: string
+    secondary_photo: string
 }
 

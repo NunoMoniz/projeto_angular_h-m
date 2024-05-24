@@ -6,12 +6,27 @@
 
 .product {
     position: relative;
-    flex: 1;
-    max-width: 300px;
-    height: 150px;
-    margin: 10px;
 }
 
-.product img {
-    width: 100%;
+/* .mainphoto {
+    display: block;
+} */
+
+.secondaryphoto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.product:hover .secondaryphoto {
+    visibility: visible;
+}
+
+.brand {
+    font-weight: bold;
+}
+
+.brand, .name, .type, .price {
+    text-align: center;
 }

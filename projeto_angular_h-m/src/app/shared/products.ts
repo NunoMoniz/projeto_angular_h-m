@@ -10,7 +10,7 @@ export const products: Product[] = [
 			"price": 123,
 			"description": "We heard somewhere that we should enjoy the simple things in life. That's why we immediately knew this Song For The Mute white T-shirt would bring more fun to our days. Even if it means going back to the office.",
 			"main_photo": "assets/images/graphic_print_tshirt_1.jpg",
-			"secundary_photo": "assets/images/graphic_print_tshirt_2.jpg"
+			"secondary_photo": "assets/images/graphic_print_tshirt_2.jpg"
 		},
 		{
 			"id": 2,
@@ -21,7 +21,7 @@ export const products: Product[] = [
 			"price": 442,
 			"description": "Multi-colored cotton logo patch crewneck T-shirt from SONG FOR THE MUTE featuring logo patch to the front, short sleeves and straight hem.",
 			"main_photo": "assets/images/contrast_panel_short_sleeve_shirt_1.jpg",
-			"secundary_photo": "assets/images/contrast_panel_short_sleeve_shirt_2.jpg"
+			"secondary_photo": "assets/images/contrast_panel_short_sleeve_shirt_2.jpg"
 		},
 		{
 			"id": 3,
@@ -32,6 +32,6 @@ export const products: Product[] = [
 			"price": 1800,
 			"description": "For the modern gentleman. Crafted from a linen blend, this Moulin suit jacket from Jacquemus showcases the designer's ability to deliver sartorial designs with a contemporary twist. Suit up.",
 			"main_photo": "assets/images/moulin_suit_jacket_1.jpg",
-			"secundary_photo": "assets/images/moulin_suit_jacket_2.jpg"
+			"secondary_photo": "assets/images/moulin_suit_jacket_2.jpg"
 		}
     ]

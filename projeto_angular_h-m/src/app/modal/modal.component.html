@@ -1,1 +1,35 @@
-<button mat-button (click)="openDialog()">Open dialog</button>
+<form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Controlo de acessos</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-email">
+                    <label for="email">Email</label>
+                    <input id="email" formControlName="email" type="email">
+                    <div *ngIf="formLogin.get('email')?.invalid && formLogin.get('email')?.touched">
+                        <small *ngIf="formLogin.get('email')?.errors?.['required']">Campo de preenchimento
+                            obrigatório</small>
+                        <small *ngIf="formLogin.get('email')?.errors?.['email']">Formato de email inválido</small>
+                    </div>
+                </div>
+                <div class="modal-password">
+                    <label for="password">Password</label>
+                    <input id="password" formControlName="password" type="password">
+                    <div *ngIf="formLogin.get('password')?.invalid && formLogin.get('password')?.touched">
+                        <small *ngIf="formLogin.get('password')?.errors?.['required']">Campo de preenchimento
+                            obrigatório</small>
+                        <small *ngIf="formLogin.get('password')?.errors?.['minlength']">A password deve ter o mínimo
+                            de 8 caracteres.</small>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Retroceder</button>
+                    <button class="btn btn-primary" type="submit" [disabled]="formLogin.invalid">Validar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

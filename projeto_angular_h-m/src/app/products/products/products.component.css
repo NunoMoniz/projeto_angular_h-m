@@ -1,0 +1,32 @@
+.products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product {
+    position: relative;
+}
+
+/* .mainphoto {
+    display: block;
+} */
+
+.secondaryphoto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.product:hover .secondaryphoto {
+    visibility: visible;
+}
+
+.brand {
+    font-weight: bold;
+}
+
+.brand, .name, .type, .price {
+    text-align: center;
+}
