@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { User } from '../shared/user.type';
 import { ServmodalService } from './servmodal.service';
@@ -9,7 +9,7 @@ import { MenuiconsComponent } from '../menuicons/menuicons.component';
 @Component({
   selector: 'app-modal',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, MenuiconsComponent],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css'
 })

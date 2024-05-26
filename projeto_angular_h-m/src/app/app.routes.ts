@@ -18,7 +18,7 @@ export const routes: Routes = [
     {
         path: 'modal',
         component: ModalComponent,
-        title: 'Todos os produtos'
+        title: 'login'
     },
     {
         path: '**',

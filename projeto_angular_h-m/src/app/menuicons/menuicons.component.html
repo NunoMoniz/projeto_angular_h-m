@@ -1,11 +1,13 @@
-<div *ngIf="loggedIn === false">
+@if (loggedIn === false) {
+<div>
     <!-- Registo -->
     <i class="fa-solid fa-user-plus"></i>
     <!-- Login -->
     <a routerLink="modal" routerLinkActive="activa"><i class="fa-solid fa-right-to-bracket"></i></a>
 </div>
-
-<div *ngIf="loggedIn === true">
+}
+@if (loggedIn === true) {
+<div>
     <!-- Wishlist -->
     <i class="fa-regular fa-clipboard"></i>
     <!-- Profile -->
@@ -13,3 +15,5 @@
     <!-- Logout -->
     <i class="fa-solid fa-right-from-bracket"></i>
 </div>
+
+}

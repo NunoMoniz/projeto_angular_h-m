@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -13,4 +13,7 @@ export class MenuiconsComponent {
 
   loggedIn: boolean = false;
 
+  toggle() {
+    this.loggedIn = !this.loggedIn;
+  }
 }
