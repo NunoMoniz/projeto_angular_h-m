@@ -1,7 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { ServmodalService } from '../modal/servmodal.service';
 
 @Component({
   selector: 'app-menuicons',
@@ -11,13 +10,13 @@ import { ServmodalService } from '../modal/servmodal.service';
   styleUrl: './menuicons.component.css'
 })
 export class MenuiconsComponent {
-
-  constructor(private servmodal: ServmodalService) {}
-
-  loginOk() {
-    if (this.servmodal.checkLogin()) {
-
-    }
-
+  
+  checkLog() {
+    const userEmail = sessionStorage.getItem('userEmail');
+    if (userEmail) {
+      return true;
+    } else {
+      return false;
+    };
   }
 }

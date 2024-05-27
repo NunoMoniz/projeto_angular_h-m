@@ -12,11 +12,8 @@ export class ServmodalService {
   private dbUsers: User[] = users;
 
   checkLogin(email: string, password: string) {
-    const user = this.dbUsers.find(user => user.email === email && user.password === password);
-    return user !== undefined;
-    login = true;
+    return this.dbUsers.find(user => user.email === email && user.password === password);
   }
 
-  login: boolean = false;
 
 }

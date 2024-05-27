@@ -3,6 +3,7 @@ import { NotfoundComponent } from './core/notfound/notfound.component';
 import { HomeComponent } from './core/home/home.component';
 import { ProductsComponent } from './products/products/products.component';
 import { ModalComponent } from './modal/modal.component';
+import { ModallogoutComponent } from './modallogout/modallogout.component';
 
 export const routes: Routes = [
     {
@@ -19,6 +20,11 @@ export const routes: Routes = [
         path: 'modal',
         component: ModalComponent,
         title: 'login'
+    },
+    {
+        path: 'modallogout',
+        component: ModallogoutComponent,
+        title: 'logout'
     },
     {
         path: '**',

@@ -1,18 +1,14 @@
-@if (toggle() === false) {
-<div>
-    <!-- Registo -->
+<div *ngIf="!checkLog()">
+    <!-- Register icon -->
     <i class="fa-solid fa-user-plus"></i>
-    <!-- Login -->
+    <!-- Login icon -->
     <a routerLink="modal" routerLinkActive="activa"><i class="fa-solid fa-right-to-bracket"></i></a>
 </div>
-}
-@if (toggle() === true) {
-<div>
-    <!-- Wishlist -->
+<div *ngIf="checkLog()">
+    <!-- Wishlist icon -->
     <i class="fa-regular fa-clipboard"></i>
-    <!-- Profile -->
+    <!-- Profile icon -->
     <i class="fa-regular fa-user"></i>
-    <!-- Logout -->
-    <i class="fa-solid fa-right-from-bracket"></i>
+    <!-- Logout icon -->
+    <a routerLink="modallogout" routerLinkActive="activa"><i class="fa-solid fa-right-from-bracket"></i></a>
 </div>
-}

@@ -3,12 +3,11 @@ import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ServmodalService } from './servmodal.service';
 import { Router } from '@angular/router';
-import { MenuiconsComponent } from '../menuicons/menuicons.component';
 
 @Component({
   selector: 'app-modal',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MenuiconsComponent],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css'
 })
@@ -28,8 +27,9 @@ export class ModalComponent {
   onSubmit() {
     if (this.formLogin.valid) {
       const { email, password } = this.formLogin.value;
-      const isValid = this.servmodal.checkLogin(email, password);
-      if (isValid) {
+      const validUser = this.servmodal.checkLogin(email, password);
+      if (validUser) {
+        sessionStorage.setItem('userEmail', email);
         this.closingModal();
       } else {
         alert('Utilizador inexistente');
