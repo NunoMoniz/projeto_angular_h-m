@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { User } from '../shared/user.type';
 import { ServmodalService } from './servmodal.service';
 import { Router } from '@angular/router';
 import { MenuiconsComponent } from '../menuicons/menuicons.component';
@@ -14,7 +13,6 @@ import { MenuiconsComponent } from '../menuicons/menuicons.component';
   styleUrl: './modal.component.css'
 })
 export class ModalComponent {
-  @Input() usersList: User[] = [];
 
   formLogin!: FormGroup;
 

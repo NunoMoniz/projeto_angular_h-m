@@ -8,10 +8,15 @@ import { users } from '../shared/users';
 export class ServmodalService {
 
   constructor() { }
+
   private dbUsers: User[] = users;
 
-  checkLogin(email: string, password: string): boolean {
-    return this.dbUsers.some(user => user.email === email && user.password === password);
+  checkLogin(email: string, password: string) {
+    const user = this.dbUsers.find(user => user.email === email && user.password === password);
+    return user !== undefined;
+    login = true;
   }
+
+  login: boolean = false;
 
 }

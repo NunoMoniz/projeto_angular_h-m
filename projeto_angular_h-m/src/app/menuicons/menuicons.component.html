@@ -1,4 +1,4 @@
-@if (loggedIn === false) {
+@if (toggle() === false) {
 <div>
     <!-- Registo -->
     <i class="fa-solid fa-user-plus"></i>
@@ -6,7 +6,7 @@
     <a routerLink="modal" routerLinkActive="activa"><i class="fa-solid fa-right-to-bracket"></i></a>
 </div>
 }
-@if (loggedIn === true) {
+@if (toggle() === true) {
 <div>
     <!-- Wishlist -->
     <i class="fa-regular fa-clipboard"></i>
@@ -15,5 +15,4 @@
     <!-- Logout -->
     <i class="fa-solid fa-right-from-bracket"></i>
 </div>
-
 }

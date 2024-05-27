@@ -1,0 +1,9 @@
+.header {
+    position: relative;
+}
+
+.menuicons {
+    position: absolute;
+    bottom: 50%;
+    right: 0;
+}

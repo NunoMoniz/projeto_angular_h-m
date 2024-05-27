@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { ServmodalService } from '../modal/servmodal.service';
 
 @Component({
   selector: 'app-menuicons',
@@ -11,9 +12,12 @@ import { CommonModule } from '@angular/common';
 })
 export class MenuiconsComponent {
 
-  loggedIn: boolean = false;
+  constructor(private servmodal: ServmodalService) {}
 
-  toggle() {
-    this.loggedIn = !this.loggedIn;
+  loginOk() {
+    if (this.servmodal.checkLogin()) {
+
+    }
+
   }
 }
