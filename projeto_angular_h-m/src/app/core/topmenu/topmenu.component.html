@@ -1,7 +1,7 @@
 <nav>
     <ul class="topMenu">
-        <li><button mat-menu-item [matMenuTriggerFor]="menu">Homem</button></li>
-        <mat-menu #menu="matMenu">
+        <li><button mat-menu-item [matMenuTriggerFor]="menuHomem">Homem</button></li>
+        <mat-menu #menuHomem="matMenu">
             <button mat-menu-item>Casacos</button>
             <button mat-menu-item>Camisas</button>
             <button mat-menu-item>Calças</button>
@@ -10,8 +10,8 @@
             <button mat-menu-item>Sapatos</button>
             <a routerLink="products" routerLinkActive="activa"><button mat-menu-item>Todos</button></a>
         </mat-menu> |
-        <li><button mat-menu-item [matMenuTriggerFor]="menu">Mulher</button></li>
-        <mat-menu #menu="matMenu">
+        <li><button mat-menu-item [matMenuTriggerFor]="menuMulher">Mulher</button></li>
+        <mat-menu #menuMulher="matMenu">
             <button mat-menu-item>Vestidos</button>
             <button mat-menu-item>Blusões</button>
             <button mat-menu-item>Coletes</button>
@@ -24,16 +24,16 @@
             <button mat-menu-item>Todos</button>
         </mat-menu>
         <li><a routerLink="/" routerLinkActive="activa"><img src="assets/images/logo.png" alt="logotipo"></a></li>
-        <li><button mat-menu-item [matMenuTriggerFor]="menu">Criança</button></li> |
-        <mat-menu #menu="matMenu">
+        <li><button mat-menu-item [matMenuTriggerFor]="menuCrianca">Criança</button></li> |
+        <mat-menu #menuCrianca="matMenu">
             <button mat-menu-item>Menina | 6-14 Anos</button>
             <button mat-menu-item>Menino | 6-14 Anos</button>
             <button mat-menu-item>Bebé Menina | 3 Meses - 5 Anos</button>
             <button mat-menu-item>Bebé Menino | 3 Meses - 5 Anos</button>
             <button mat-menu-item>Mini | 0-12 Meses</button>
         </mat-menu>
-        <li><button mat-menu-item [matMenuTriggerFor]="menu">Acessórios</button></li>
-        <mat-menu #menu="matMenu">
+        <li><button mat-menu-item [matMenuTriggerFor]="menuAcessorios">Acessórios</button></li>
+        <mat-menu #menuAcessorios="matMenu">
             <button mat-menu-item>Malas</button>
             <button mat-menu-item>Pulseiras</button>
             <button mat-menu-item>Anéis</button>
