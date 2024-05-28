@@ -11,6 +11,7 @@ import { Product } from '../../shared/product.type';
 })
 export class ProductComponent {
   @Input() productsList: Product[] = [];
+  @Input() featuredproductsList: Product[] = [];
   @Output() idShowInfo: EventEmitter<number> = new EventEmitter();
 
   showInfo(id: number) {

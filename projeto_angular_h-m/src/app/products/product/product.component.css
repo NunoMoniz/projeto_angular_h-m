@@ -1,26 +1,40 @@
 .products {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
 .product {
+    flex-basis: 33%;
+    text-align: center;
+}
+
+.featuredproduct {
+    flex-basis: 25%;
+    text-align: center;
+}
+
+.photos {
     position: relative;
 }
 
-/* .mainphoto {
-    display: block;
-} */
-
 .secondaryphoto {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     visibility: hidden;
 }
 
 .product:hover .secondaryphoto {
     visibility: visible;
+}
+
+.featuredproduct:hover {
+    border: 2px;
+    border-color: red;
+    border-style: solid;
 }
 
 .brand {

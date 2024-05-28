@@ -1,0 +1,7 @@
+.text {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 300%;
+    text-align: center;
+    margin: 30px;
+}

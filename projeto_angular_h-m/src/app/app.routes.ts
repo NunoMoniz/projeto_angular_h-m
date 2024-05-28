@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 import { NotfoundComponent } from './core/notfound/notfound.component';
 import { HomeComponent } from './core/home/home.component';
-import { ProductsComponent } from './products/products/products.component';
 import { ModalComponent } from './modal/modal.component';
 import { ModallogoutComponent } from './modallogout/modallogout.component';
+import { ProductsComponent } from './products/products/products.component';
 
 export const routes: Routes = [
     {

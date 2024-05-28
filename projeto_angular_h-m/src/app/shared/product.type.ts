@@ -7,6 +7,7 @@ export type Product = {
     price: number,
     description: string,
     main_photo: string,
-    secondary_photo: string
+    secondary_photo: string,
+    featured_product: boolean
 }
 
