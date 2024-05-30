@@ -7,7 +7,7 @@
                 </div>
                 <div class="modal-email">
                     <label for="email">Email</label>
-                    <input id="email" formControlName="email" type="email">
+                    <input class="input" id="email" formControlName="email" type="email">
                     <div *ngIf="formLogin.get('email')?.invalid && formLogin.get('email')?.touched">
                         <small *ngIf="formLogin.get('email')?.errors?.['required']">Campo de preenchimento
                             obrigatório</small>
@@ -16,16 +16,20 @@
                 </div>
                 <div class="modal-password">
                     <label for="password">Password</label>
-                    <input id="password" formControlName="password" type="password">
+                    <input class="input" id="password" formControlName="password" type="password">
                     <div *ngIf="formLogin.get('password')?.invalid && formLogin.get('password')?.touched">
                         <small *ngIf="formLogin.get('password')?.errors?.['required']">Campo de preenchimento
                             obrigatório</small>
                         <small *ngIf="formLogin.get('password')?.errors?.['minlength']">A password deve ter o mínimo
                             de 8 caracteres.</small>
                     </div>
+                    <div *ngIf="loginError !== null" class="text-danger mt-3">
+                        {{ loginError }}
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closingModal()">Retroceder</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        (click)="closingModal()">Retroceder</button>
                     <button class="btn btn-primary" type="submit" [disabled]="formLogin.invalid">Validar</button>
                 </div>
             </div>

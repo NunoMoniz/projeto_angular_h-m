@@ -4,6 +4,9 @@ import { HomeComponent } from './core/home/home.component';
 import { ModalComponent } from './modal/modal.component';
 import { ModallogoutComponent } from './modallogout/modallogout.component';
 import { ProductsComponent } from './products/products/products.component';
+import { ProductinfoComponent } from './products/productinfo/productinfo.component';
+import { WishlistComponent } from './wishlist/wishlist/wishlist.component';
+// import { ProductsapiComponent } from './products/productsapi/productsapi/productsapi.component';
 
 export const routes: Routes = [
     {
@@ -16,6 +19,11 @@ export const routes: Routes = [
         component: ProductsComponent,
         title: 'Todos os produtos'
     },
+    // {
+    //     path: 'products',
+    //     component: ProductsapiComponent,
+    //     title: 'Todos os produtos'
+    // },
     {
         path: 'modal',
         component: ModalComponent,
@@ -25,6 +33,16 @@ export const routes: Routes = [
         path: 'modallogout',
         component: ModallogoutComponent,
         title: 'logout'
+    },
+    {
+        path: 'products/:id',
+        component: ProductinfoComponent,
+        title: 'productinfo'
+    },
+    {
+        path: 'wishlist',
+        component: WishlistComponent,
+        title: 'wishlist'
     },
     {
         path: '**',

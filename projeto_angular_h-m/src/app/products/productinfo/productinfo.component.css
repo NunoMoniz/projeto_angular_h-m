@@ -1,0 +1,24 @@
+.product {
+    /* PORQUE É QUE ESTÁ A FUNCIONAR COM O TEXT-ALIGN E NÃO COM A FLEXBOX? */
+    /* display: flex;
+    justify-content: center; */
+    text-align: center;
+}
+
+.brand {
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.name {
+    font-size: x-large;
+}
+
+.photos img {
+    margin: 30px;
+}
+
+.description {
+    max-width: 450px;
+    margin: auto;
+}

@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
   styleUrl: './products.component.css'
 })
 export class ProductsComponent {
+
   dbProducts: Product[] = [];
 
   constructor(private route: Router, private servproducts: ServproductsService) { }
@@ -27,4 +28,14 @@ export class ProductsComponent {
   showInfo(id: number) {
     this.route.navigate(['products', id]);
   }
+
+  checkLog() {
+    const userEmail = sessionStorage.getItem('userEmail');
+    if (userEmail) {
+      return true;
+    } else {
+      return false;
+    };
+  }
+
 }

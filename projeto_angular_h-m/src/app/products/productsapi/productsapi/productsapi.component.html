@@ -1,0 +1,20 @@
+<!-- json-server --watch products.json > OK
+GET http://localhost:3000/products pelo Postman > OK
+ServproductsapiService > NÃO FUNCIONA -->
+
+<div class="products" *ngIf="productsList.length > 0">
+    <div class="product" *ngFor="let product of productsList">
+        <div class="photos">
+            <img class="mainphoto" src="{{ product.main_photo }}">
+            <img class="secondaryphoto" src="{{ product.secondary_photo }}">
+        </div>
+        <h2 class="brand">{{ product.brand }}</h2>
+        <p class="name">{{ product.name }}</p>
+        <p class="type">{{ product.product_type }}</p>
+        <h1 class="price">{{ product.price }} €</h1>
+        <div class="stars">
+            <i class="far fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+    </div>
+</div>

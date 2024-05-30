@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "fs-extra": "^11.2.0",
     "ngx-bootstrap": "^12.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.13"
   }
 }

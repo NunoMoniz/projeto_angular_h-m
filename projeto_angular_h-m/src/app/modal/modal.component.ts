@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class ModalComponent {
 
   formLogin!: FormGroup;
+  loginError?: string;
 
   constructor(private router: Router, private servmodal: ServmodalService) {}
 
@@ -32,7 +33,7 @@ export class ModalComponent {
         sessionStorage.setItem('userEmail', email);
         this.closingModal();
       } else {
-        alert('Utilizador inexistente');
+        this.loginError = 'Utilizador inexistente';
       }
     }
   }

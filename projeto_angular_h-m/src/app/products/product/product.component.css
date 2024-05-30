@@ -6,11 +6,13 @@
 }
 
 .product {
+    position: relative;
     flex-basis: 33%;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-.featuredproduct {
+.featuredproduct, .wishlistproduct {
     flex-basis: 25%;
     text-align: center;
 }
@@ -24,23 +26,28 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    visibility: hidden;
+    display: none;
 }
 
-.product:hover .secondaryphoto {
-    visibility: visible;
+.photos:hover .secondaryphoto {
+    cursor: pointer;
+    display: inline;
 }
 
 .featuredproduct:hover {
     border: 2px;
     border-color: red;
     border-style: solid;
+    cursor: pointer;
 }
 
 .brand {
     font-weight: bold;
 }
 
-.brand, .name, .type, .price {
-    text-align: center;
+.stars {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    cursor: pointer;
 }

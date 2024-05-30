@@ -7,12 +7,15 @@ import { products } from '../shared/products';
 })
 export class ServproductsService {
 
-  constructor() { }
-
   private dbProducts: Product[] = products;
+
+  constructor() { }
 
   getAllProducts() {
     return this.dbProducts;
   }
 
+  getProductById(id: number) {
+    return this.dbProducts.filter(product => product.id === id)[0];
+  }
 }
