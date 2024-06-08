@@ -13,7 +13,7 @@ export class ModallogoutComponent {
   constructor(private router: Router) { }
 
   logout() {
-    sessionStorage.removeItem('userEmail');
+    localStorage.removeItem('email');
     this.closingModal();
   }
 

@@ -30,7 +30,7 @@ export class ModalComponent {
       const { email, password } = this.formLogin.value;
       const validUser = this.servmodal.checkLogin(email, password);
       if (validUser) {
-        sessionStorage.setItem('userEmail', email);
+        localStorage.setItem('email', email);
         this.closingModal();
       } else {
         this.loginError = 'Utilizador inexistente';

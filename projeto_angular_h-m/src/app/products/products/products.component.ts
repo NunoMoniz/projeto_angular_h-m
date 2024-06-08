@@ -30,7 +30,7 @@ export class ProductsComponent {
   }
 
   checkLog() {
-    const userEmail = sessionStorage.getItem('userEmail');
+    const userEmail = localStorage.getItem('email');
     if (userEmail) {
       return true;
     } else {

@@ -1,1 +1,20 @@
-<app-product [wishlist]="dbWishlist" (idShowInfo)="showInfo($event)" (idAdd)="addItem($event)" (idDelete)="removeItem($event)"></app-product>
+<div *ngIf="dbWishlist.length === 0">
+    <h1 class="empty">Wishlist vazia</h1>
+</div>
+<div class="wishlistproducts" *ngIf="dbWishlist.length > 0">
+    <div class="wishlistproduct" *ngFor="let product of dbWishlist">
+        <div class="photo" (click)="showInfo(product.id!)">
+            <img class="mainphoto" src="{{ product.main_photo }}">
+        </div>
+        <div class="text">
+            <h2 class="brand">{{ product.brand }}</h2>
+            <p class="name">{{ product.name }}</p>
+            <p class="type">{{ product.product_type }}</p>
+            <h1 class="price">{{ product.price }} €</h1>
+        </div>
+        <div class="button">
+            <button class="btn btn-danger" (click)="remove(product.id!)">Remover</button>
+        </div>
+    </div>
+</div>
+<!--  (idAdd)="addItem($event)" (idDelete)="removeItem($event)" -->

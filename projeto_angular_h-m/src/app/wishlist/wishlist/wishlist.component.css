@@ -1,0 +1,37 @@
+.empty {
+    text-align: center;
+}
+
+.wishlistproduct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo {
+    padding: 40px;
+}
+
+.photo:hover, .text:hover {
+    cursor: pointer;
+}
+
+.text {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+}
+
+.brand {
+    font-weight: bold;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.btn {
+    width: 200px;
+}

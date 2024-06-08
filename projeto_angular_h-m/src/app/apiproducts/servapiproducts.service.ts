@@ -1,16 +1,12 @@
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
-import { Product } from '../../shared/product.type';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Product } from '../shared/product.type';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ServproductsapiService {
-
-  // json-server --watch products.json --> OK
-  // GET http://localhost:3000/products pelo Postman --> OK
-  // ServproductsapiService --> NÃO FUNCIONA
+export class ServapiproductsService {
 
   private urlAPI = "http://localhost:3000/products"
 
@@ -32,4 +28,5 @@ export class ServproductsapiService {
         catchError(this.errorProcessor)
       );
   }
+
 }

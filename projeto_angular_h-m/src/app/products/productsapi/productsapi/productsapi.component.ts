@@ -26,10 +26,10 @@ export class ProductsapiComponent {
 
   readProducts() {
     this.servproducts.allProducts().subscribe({
-      next: dados => {
-        this.productsList = dados;
+      next: data => {
+        this.productsList = data;
       },
-      error: erro => alert(erro),
+      error: error => alert(error),
       complete: () => console.log("Complete")
     });
   }

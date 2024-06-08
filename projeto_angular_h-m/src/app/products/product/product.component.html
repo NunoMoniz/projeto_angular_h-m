@@ -9,8 +9,8 @@
         <p class="type">{{ product.product_type }}</p>
         <h1 class="price">{{ product.price }} €</h1>
         <div class="stars" *ngIf="checkLog()">
-            <i class="far fa-star" (click)="addToWishlist(product.id!)"></i>
-            <i class="fas fa-star" (click)="removeWishlistItem(product.id!, $event)"></i>
+            <i class="far fa-star" (click)="addToWishlist(product.id!, $event)"></i>
+            <i class="fas fa-star" (click)="removeFromWishlist(product.id!, $event)"></i>
         </div>
     </div>
 </div>
@@ -18,21 +18,6 @@
     <div class="featuredproduct" *ngFor="let product of featuredproductsList">
         <div class="photos">
             <img class="mainphoto" src="{{ product.main_photo }}" (click)="showInfo(product.id!)">
-        </div>
-    </div>
-</div>
-<div class="products" *ngIf="wishlist.length > 0">
-    <div class="wishlistproduct" *ngFor="let product of wishlist">
-        <div class="photos">
-            <img class="mainphoto" src="{{ product.main_photo }}">
-            <img class="secondaryphoto" src="{{ product.secondary_photo }}" (click)="showInfo(product.id!)">
-        </div>
-        <h2 class="brand">{{ product.brand }}</h2>
-        <p class="name">{{ product.name }}</p>
-        <p class="type">{{ product.product_type }}</p>
-        <h1 class="price">{{ product.price }} €</h1>
-        <div class="button">
-            <button class="btn btn-danger" (click)="removeWishlistItem(product.id!, $event)">Remover</button>
         </div>
     </div>
 </div>

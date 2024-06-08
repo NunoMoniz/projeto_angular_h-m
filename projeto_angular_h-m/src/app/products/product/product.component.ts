@@ -12,7 +12,6 @@ import { Product } from '../../shared/product.type';
 export class ProductComponent {
   @Input() productsList: Product[] = [];
   @Input() featuredproductsList: Product[] = [];
-  @Input() wishlist: Product[] = [];
   @Output() idShowInfo: EventEmitter<number> = new EventEmitter();
   @Output() idAdd: EventEmitter<number> = new EventEmitter();
   @Output() idDelete: EventEmitter<number> = new EventEmitter();
@@ -21,17 +20,17 @@ export class ProductComponent {
     this.idShowInfo.emit(id);
   }
 
-  addToWishlist(id: number) {
+  addToWishlist(id: number, event: MouseEvent) {
     this.idAdd.emit(id);
   }
 
-  removeWishlistItem(id: number, event: MouseEvent) {
+  removeFromWishlist(id: number, event: MouseEvent) {
     event.stopPropagation();
     this.idDelete.emit(id);
   }
 
   checkLog() {
-    const userEmail = sessionStorage.getItem('userEmail');
+    const userEmail = localStorage.getItem('email');
     if (userEmail) {
       return true;
     } else {

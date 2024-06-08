@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class MenuiconsComponent {
   
   checkLog() {
-    const userEmail = sessionStorage.getItem('userEmail');
+    const userEmail = localStorage.getItem('email');
     if (userEmail) {
       return true;
     } else {

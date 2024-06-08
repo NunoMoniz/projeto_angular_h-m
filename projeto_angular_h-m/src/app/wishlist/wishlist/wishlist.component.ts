@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { Product } from '../../shared/product.type';
 import { ProductComponent } from '../../products/product/product.component';
-import { ServwishlistService } from '../servwishlist.service';
+import { ServmodalService } from '../../modal/servmodal.service';
 
 @Component({
   selector: 'app-wishlist',
@@ -16,29 +16,22 @@ export class WishlistComponent {
 
   dbWishlist: Product[] = [];
 
-  constructor(private route: Router, private servwishlist: ServwishlistService) { }
+  constructor(private route: Router, private servwishlist: ServmodalService) { }
 
   ngOnInit() {
     this.readWishlist();
   }
 
   readWishlist() {
-    this.dbWishlist = this.servwishlist.getWishlistItems();
+    this.dbWishlist = this.servwishlist.getWishlistProduts();
   }
 
   showInfo(id: number) {
     this.route.navigate(['products', id]);
   }
 
-  addItem(id: number) {
-    console.log(id);
-    this.servwishlist.addItem(id);
-    this.readWishlist();
-  }
-
-  removeItem(id: number) {
-    console.log(id);
-    this.servwishlist.removeItem(id);
+  remove(id: number) {
+    this.servwishlist.remove(id);
     this.readWishlist();
   }
   

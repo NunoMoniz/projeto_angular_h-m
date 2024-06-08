@@ -14,15 +14,15 @@ export class ServwishlistService {
 
   private lists: Wishlist[] = wishlist;
 
-  logedUserEmail = sessionStorage.getItem('userEmail');
+  logedUserEmail = localStorage.getItem('email');
 
   logedUserWishlist: Product[] = [];
 
   constructor(private servproducts: ServproductsService) { }
 
-  getWishlistItems() {
-    const wishlistUser = this.lists.find(list => list.userEmail === this.logedUserEmail);
-    const wishlistProductIds = wishlistUser!.productsid;
+  getWishlistProduts() {
+    const wishlistUser = this.lists.find(list => list.email === this.logedUserEmail);
+    const wishlistProductIds = wishlistUser!.wishlist_productsid;
     return this.dbProducts.filter(product => wishlistProductIds.includes(product.id!));
   }
 
@@ -33,9 +33,9 @@ export class ServwishlistService {
   }
 
   removeItem(productid: number) {
-    const wishlistUser = this.lists.find(list => list.userEmail === this.logedUserEmail);
-    const index = wishlistUser!.productsid.indexOf(productid);
-    wishlistUser!.productsid.splice(index, 1);
+    const wishlistUser = this.lists.find(list => list.email === this.logedUserEmail);
+    const index = wishlistUser!.wishlist_productsid.indexOf(productid);
+    wishlistUser!.wishlist_productsid.splice(index, 1);
   }
 
 }

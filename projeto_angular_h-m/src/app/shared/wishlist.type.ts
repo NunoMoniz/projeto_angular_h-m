@@ -1,5 +1,10 @@
 export type Wishlist = {
     id?: number,
-    userEmail: string,
-    productsid: number[]
+    name: string,
+    email: string,
+    password: string,
+    address: string,
+    postcode: string,
+    country: string,
+    wishlist_productsid: number[]
 }
