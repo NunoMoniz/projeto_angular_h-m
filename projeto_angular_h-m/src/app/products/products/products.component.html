@@ -55,9 +55,6 @@
             </div>
         </div>
     </div>
-    <!-- <div class="products" *ngIf="dbFilteredProducts.length === 0">
-        <app-product [productsList]="dbProducts" (idShowInfo)="showInfo($event)"></app-product>
-    </div> -->
     <div class="products">
         <app-product [productsList]="filteredProducts" (idShowInfo)="showInfo($event)"></app-product>
     </div>

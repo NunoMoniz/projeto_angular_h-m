@@ -31,33 +31,61 @@ export class ProductsComponent {
 
   readProducts() {
     this.dbProducts = this.servproducts.getAllProducts();
-    this.filteredProducts = this.dbProducts.filter(product => {
-      return this.filteredByType.includes(product) && this.filteredByColor.includes(product);
-    });
+    this.applyFilters();
+  }
+  
+  filterType(type: string) {
+    if (type === 'All') {
+      this.filteredByType = [];
+    } else {
+      this.filteredByType = this.dbProducts.filter(product => product.product_type === type);
+    }
+    this.applyFilters();
+  }
+  
+  filterColor(color: string) {
+    if (color === 'All') {
+      this.filteredByColor = [];
+    } else {
+      this.filteredByColor = this.dbProducts.filter(product => product.color === color);
+    }
+    this.applyFilters();
+  }
+  
+  applyFilters() {
+    const productsFilteredByType = this.filteredByType.length > 0 ?
+      this.dbProducts.filter(product => this.filteredByType.includes(product)) :
+      this.dbProducts;
+  
+    const productsFilteredByColor = this.filteredByColor.length > 0 ?
+      productsFilteredByType.filter(product => this.filteredByColor.includes(product)) :
+      productsFilteredByType;
+  
+    this.filteredProducts = productsFilteredByColor;
   }
   
 
-  filterType(type: string) {
-    if (type === 'All') {
-      this.filteredByType = this.dbProducts;
-    } else {
-      this.filteredByType = this.dbProducts.filter(product => {
-        return product.product_type === type;
-      });
-    };
-    this.filteredProducts === this.filteredByType;
-  }
+  // filterType(type: string) {
+  //   if (type === 'All') {
+  //     this.filteredByType = this.dbProducts;
+  //   } else {
+  //     this.filteredByType = this.dbProducts.filter(product => {
+  //       return product.product_type === type;
+  //     });
+  //   };
+  //   this.filteredProducts === this.filteredByType;
+  // }
 
-  filterColor(color: string) {
-    if (color === 'All') {
-      this.filteredByColor = this.dbProducts;
-    } else {
-      this.filteredByColor = this.dbProducts.filter(product => {
-        return product.color === color;
-      });
-    };
-    this.filteredProducts === this.filteredByColor;
-  }
+  // filterColor(color: string) {
+  //   if (color === 'All') {
+  //     this.filteredByColor = this.dbProducts;
+  //   } else {
+  //     this.filteredByColor = this.dbProducts.filter(product => {
+  //       return product.color === color;
+  //     });
+  //   };
+  //   this.filteredProducts === this.filteredByColor;
+  // }
 
   showInfo(id: number) {
     this.route.navigate(['products', id]);
