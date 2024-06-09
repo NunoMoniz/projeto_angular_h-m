@@ -1,20 +1,9 @@
-.container {
-    display: flex;
-    gap: 20px;
-}
-
 .box {
-    flex: 1;
-    height: 400px;
     width: 150px;
     border: 1px;
     border-color: grey;
     border-style: solid;
 }   
-
-.products {
-    flex: 5;
-}
 
 .box-body{
     padding-left: 15px;

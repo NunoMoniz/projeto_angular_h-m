@@ -1,1 +1,64 @@
-<app-product [productsList]="dbProducts" (idShowInfo)="showInfo($event)"></app-product>
+<div class="container">
+    <div class="box">
+        <h3 class="title">Tipo</h3>
+        <div class="box-body">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="casacos" (change)="filterType('Casaco')">
+                <label class="form-check-label" for="casacos">Casacos</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="camisas" (change)="filterType('Camisa')">
+                <label class="form-check-label" for="camisas">Camisas</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="calcas" (change)="filterType('Calças')">
+                <label class="form-check-label" for="calcas">Calças</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="sweatshirts" (change)="filterType('Sweatshirt')">
+                <label class="form-check-label" for="sweatshirts">Sweatshirts</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="polos" (change)="filterType('Polo')">
+                <label class="form-check-label" for="polos">Polos</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="sapatos" (change)="filterType('Sapatos')">
+                <label class="form-check-label" for="sapatos">Sapatos</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="todos" checked (change)="filterType('All')">
+                <label class="form-check-label" for="todos">Todos</label>
+            </div>
+        </div>
+        <h3 class="title">Cor</h3>
+        <div class="box-body">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="azul" (change)="filterColor('Azul')">
+                <label class="form-check-label" for="azul">Azul</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="cinzento" (change)="filterColor('Cinzento')">
+                <label class="form-check-label" for="cinzento">Cinzento</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="laranja" (change)="filterColor('Laranja')">
+                <label class="form-check-label" for="laranja">Laranja</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="preto" (change)="filterColor('Preto')">
+                <label class="form-check-label" for="preto">Preto</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="todos" checked (change)="filterColor('All')">
+                <label class="form-check-label" for="todos">Todos</label>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="products" *ngIf="dbFilteredProducts.length === 0">
+        <app-product [productsList]="dbProducts" (idShowInfo)="showInfo($event)"></app-product>
+    </div> -->
+    <div class="products">
+        <app-product [productsList]="filteredProducts" (idShowInfo)="showInfo($event)"></app-product>
+    </div>
+</div>

@@ -12,6 +12,7 @@ import { ProductComponent } from '../product/product.component';
   styleUrl: './featuredproducts.component.css'
 })
 export class FeaturedproductsComponent {
+  
   dbFeaturedproducts: Product[] = [];
 
   constructor(private route: Router, private servproducts: ServproductsService) { }
